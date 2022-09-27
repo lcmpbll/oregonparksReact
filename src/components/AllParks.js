@@ -1,12 +1,13 @@
 import React, {useState, useEffect } from 'react';
 import ParksList from './ParksList';
+import ParkDetail from './ParkDetail';
 function AllParks() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [allParks, setAllParks] = useState([]);
   const [selectedPark, setSelectedPark] = useState(null);
  
-  
+  console.log(selectedPark);
 
   useEffect(() => {
    
@@ -36,9 +37,9 @@ function AllParks() {
     }
 
     const handleChangingSelectedPark = (id) => {
-      const selectedPark = allParks.filter((park) => park.id === id)[0];
-      console.log(selectedPark);      
-      setSelectedPark(selectedPark);
+      const selection = allParks.filter((park) => park.id === id)[0];
+           
+      setSelectedPark(selection);
     }
   
    let currentlyVisibleState = null;
@@ -47,6 +48,8 @@ function AllParks() {
     currentlyVisibleState = <h1>Error: {error}</h1>;
   } else if(!isLoaded) {
     currentlyVisibleState = <h1>...Loading...</h1>;
+  } else if (selectedPark != null) {
+    currentlyVisibleState = <ParkDetail park={selectedPark} />
   } else { 
     currentlyVisibleState = <ParksList parkList={allParks} onParkSelection={handleChangingSelectedPark} />
     return (
