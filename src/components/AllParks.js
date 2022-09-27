@@ -4,7 +4,7 @@ function AllParks() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [allParks, setAllParks] = useState([]);
-  // const [selectedParkId, setSelectedParkId] = useState();
+  const [selectedPark, setSelectedPark] = useState(null);
  
   
 
@@ -28,19 +28,31 @@ function AllParks() {
           setIsLoaded(true)
         });
     }, []) 
+    
+    const handleClick = () => {
+      if(selectedPark != null) {
+        setSelectedPark(null);
+      }
+    }
+
+    const handleChangingSelectedPark = (id) => {
+      const selectedPark = allParks.filter((park) => park.id === id)[0];
+      console.log(selectedPark);      
+      setSelectedPark(selectedPark);
+    }
   
    let currentlyVisibleState = null;
-  //  let buttonText = null; 
+   let buttonText = "null"; 
   if(error) {
     currentlyVisibleState = <h1>Error: {error}</h1>;
   } else if(!isLoaded) {
     currentlyVisibleState = <h1>...Loading...</h1>;
   } else { 
-    currentlyVisibleState = <ParksList parkList={allParks} />
+    currentlyVisibleState = <ParksList parkList={allParks} onParkSelection={handleChangingSelectedPark} />
     return (
       <React.Fragment>
         {currentlyVisibleState}
-    
+        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
       </React.Fragment>
     );
   }
