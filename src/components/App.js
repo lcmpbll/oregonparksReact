@@ -1,4 +1,4 @@
-
+import Footer from './Footer';
 import React from 'react';
 import AllParks from './AllParks';
 import '../App.css';
@@ -8,7 +8,9 @@ import background from '../img/wild.jpeg';
 function App() {
   const mainStyle={
     backgroundImage: `url(${background})`,
-    height: '1000px',
+    border: '2px solid black',
+  
+    display: 'flex',
     color: 'white'
   }
   return (
@@ -17,6 +19,7 @@ function App() {
       <div style={mainStyle}>
         <AllParks />
       </div>
+      <Footer />
     </React.Fragment>
   );
 }
