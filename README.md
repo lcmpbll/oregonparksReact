@@ -1,4 +1,120 @@
-# Getting Started with Create React App
+# Oregon State and National Parks List
+
+# By Sandra Tena, Joe Roaden, and Liam Campbell
+
+
+#### _A Front End REACT application that utilizes a Oregon State and National Parks API to display info for the user_
+
+![Picture of application in action.](./src/img/appScreenShot.png)
+---
+## Table of Contents
+[Technologies Used](#technologies-used)  
+[Description](#description)  
+[Setup/Installation Requirements](#setup-and-installation-requirements)   
+[Known Bugs](#known-bugs)  
+[License](#License)
+
+---
+## Technologies Used
+
+* _REACT_
+* _JavaScript_
+* _HTML_
+* _CSS_
+* _JSX_
+
+
+---
+## Description
+
+_The user can view a list of State and National parks as well as find helpful links to the National Park Service, State Parks and Department of Forestry_
+
+---
+## Setup and Installation Requirements
+
+<details>
+<summary><strong>Initial Setup</strong></summary>  
+
+1. Copy the git repository url: https://github.com/lcmpbll/oregonparksReact
+2. Open a shell program and navigate to your desktop.
+3. Clone the repository for this project using the `git clone` command and including the copied URL.
+4. While still in the shell program, navigate to the root directory of the newly created file named `OREGONPARKS`.
+5. From the root directory, run `npm install` to install all modules that are listed on package. json file and their dependencies
+6. From the root directory, run `npm run start` to view the application on your local live server.
+
+</details>
+
+## API SetUp and Installation
+
+<details>
+<summary><strong>Initial Setup</strong></summary>
+<ol>
+<li>Copy the git repository url: https://github.com/lcmpbll/ParksApi.Solution
+<li>Open a shell program and navigate to your desktop.
+<li>Clone the repository for this project using the "git clone" command and including the copied URL.
+<li>While still in the shell program, navigate to the root directory of the newly created file named "ParksApi.Solution".
+<li>From the root directory, navigate to the "ParksApi" directory.
+<li>Move onto "SQL Workbench" instructions below to re-create database necessary to run this project.
+<br>
+</details>
+
+<details>
+<summary><strong>SQL Workbench Configuration</strong></summary>
+<ol>
+<li>Create an appsetting.json file in the "ParksApi" directory of the project*  
+   <pre>ParksApi.Solution
+   └── ParksApi
+    └── appsetting.json</pre>
+<li> Insert the following code** : <br>
+
+<pre>{
+   "Logging": {
+    "LogLevel": {
+      "Default": "Warning",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=park_api;uid=root;pwd=[YOUR-PASSWORD-HERE];"
+  }
+}</pre>
+<small>*note: you must include your password in the code block section labeled "YOUR-PASSWORD-HERE".</small>
+<small>**note: if you plan to push this cloned project to a public-facing repository, remember to add the appsettings.json file to your .gitignore before doing so.</small>
+
+<li>Once "appsettings.json" file has been created, navigate back to SQL Workbench.
+
+
+</details>
+
+<details>
+<summary><strong>To Run</strong></summary>
+Navigate to:  
+   <pre>ParksApi.Solution
+   └── <strong>ParksApi</strong></pre>
+
+Run `$ dotnet restore` in the console.<br>
+Run `$ dotnet database update` in the console.<br>
+Run `$ dotnet run` in the console
+* _To view more information view localhost:[yourlocalhost]/index.html_
+* _Additional information in JSon can also be viewed at https://localhost:[yourlocalhost]/swagger/v1/swagger.json
+
+* _You may need to disable CORS authentication use this extension if so [Moseif](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc?hl=en-US)_
+</details>
+
+---
+## Known Bugs
+
+* _There are no known bugs at this time_
+
+---
+## License
+
+[Copyright](LICENSE) © 2022 Sandra Tena, Liam Campbell & Joe Roaden
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
