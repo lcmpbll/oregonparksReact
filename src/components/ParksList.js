@@ -4,7 +4,7 @@ import Park from './Park';
 
 function ParksList(props) {
   const listStyle={
-    marginTop: '10rem'
+    // marginTop: '10rem'
   }
 
   return (

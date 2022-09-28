@@ -43,10 +43,10 @@ function AllParks() {
       setSelectedPark(selection);
     }
   const pageStyle = {
-    marginTop: '100px'
+    marginTop: '10px'
   }
    let currentlyVisibleState = null;
-   let buttonText = "null"; 
+   let buttonText = "Enter"; 
   if(error) {
     currentlyVisibleState = <h1>Error: {error}</h1>;
   } else if(!isLoaded) {
@@ -59,7 +59,7 @@ function AllParks() {
       <React.Fragment>
         <div style={pageStyle}>
           {currentlyVisibleState}
-          {error ? null : <button onClick={handleClick}>{buttonText}</button>}
+          {/* {error ? null : <button onClick={handleClick}>{buttonText}</button>} */}
         </div>
       </React.Fragment>
     );
