@@ -3,7 +3,7 @@
 # By Sandra Tena, Joe Roaden, and Liam Campbell
 
 
-#### _A Front End REACT application that utilizes a Oregon State and National Parks API to display info for the user_
+#### _A Front End REACT application that utilizes an Oregon State and National Parks API to display info for the user_
 
 ![Picture of application in action.](./src/img/appScreenShot.png)
 ---
@@ -118,7 +118,10 @@ Run `$ dotnet run` in the console
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+
+<details>
+<summary><strong> Available Scripts</strong></summary>
 
 In the project directory, you can run:
 
@@ -184,3 +187,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+</details>
