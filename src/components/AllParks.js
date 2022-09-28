@@ -11,7 +11,7 @@ function AllParks() {
 
   useEffect(() => {
    
-    fetch(`https://localhost:5001/api/v1/Parks/All`)
+    fetch(`http://localhost:5000/api/v1/Parks/All`)
         .then(response => {
           console.log(response);
           if(!response.ok) {
@@ -22,6 +22,7 @@ function AllParks() {
         })
         .then((jsonifiedResponse) => {
           setAllParks(jsonifiedResponse)
+          console.log(jsonifiedResponse);
           setIsLoaded(true)
         })
         .catch((error) => {
@@ -36,12 +37,14 @@ function AllParks() {
       }
     }
 
-    const handleChangingSelectedPark = (id) => {
-      const selection = allParks.filter((park) => park.id === id)[0];
+    const handleChangingSelectedPark = (parkId) => {
+      const selection = allParks.filter((park) => park.parkId === parkId)[0];
            
       setSelectedPark(selection);
     }
-  
+  const pageStyle = {
+    marginTop: '100px'
+  }
    let currentlyVisibleState = null;
    let buttonText = "null"; 
   if(error) {
@@ -54,8 +57,10 @@ function AllParks() {
     currentlyVisibleState = <ParksList parkList={allParks} onParkSelection={handleChangingSelectedPark} />
     return (
       <React.Fragment>
-        {currentlyVisibleState}
-        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
+        <div style={pageStyle}>
+          {currentlyVisibleState}
+          {error ? null : <button onClick={handleClick}>{buttonText}</button>}
+        </div>
       </React.Fragment>
     );
   }

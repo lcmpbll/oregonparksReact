@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Park(props){
   return (
     <React.Fragment>
-      <div onClick= {() => props.whenParkClicked(props.id)}>
+      <div onClick= {() => props.whenParkClicked(props.parkId)}>
         <h3>{props.name}</h3>
         <h4>{props.location}</h4>
         <h4>{props.parkMgmt}</h4>
@@ -20,6 +20,7 @@ Park.propTypes = {
   location: PropTypes.string,
   parkMgmt: PropTypes.string,
   description: PropTypes.string,
+  pardkId: PropTypes.number
 }
 
 export default Park;
