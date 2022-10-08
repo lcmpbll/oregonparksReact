@@ -22,6 +22,7 @@ function App() {
     <React.Fragment>
       <Header />
       <div style={mainStyle}>
+        <h1>Parks</h1>
         <AllParks />
       </div>
       <Footer />
