@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 function ParkDetails(props){
-  const [checkBox, setCheckBox] = useState('')
+ 
   
   const{ park } = props;
   const detailsStyles ={
@@ -12,17 +12,12 @@ function ParkDetails(props){
   }
   const parkDetailsStyles = {
     display: 'flex',
-    // flexDirection: 'row',
+   
   }
+  const dogsAllowed = park.dogsAllowed.toString();
   
-  // const dogCheck = (park) => {
-  //   if(park.dogsAllowed === true){
-  //     setCheckBox("Dogs are allowed!");
-  //   } else {
-  //     setCheckBox("Dogs are not allowed in all areas.");
-  //   }
-  // }
-  // dogCheck(park);
+  
+ 
   return (
     <React.Fragment>
       <div styles={detailsStyles}>
@@ -32,7 +27,7 @@ function ParkDetails(props){
           <p>{park.description}</p>
         </div>
         <div style={parkDetailsStyles}>
-          {/* <div><p>Dogs Allowed: {park.dogsAllowed}</p></div> &nbsp; */}
+          <div><p>Dogs Allowed: {dogsAllowed}</p></div> &nbsp;
           <div><p>Location: {park.location}</p></div> &nbsp;
           <div><p>Managed by: {park.parkMgmt}</p></div> &nbsp;
         </div>
