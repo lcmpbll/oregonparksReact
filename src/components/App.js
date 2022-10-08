@@ -8,10 +8,15 @@ import background from '../img/wild.jpeg';
 function App() {
   const mainStyle={
     backgroundImage: `url(${background})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    width: '100vw',
+
     border: '2px solid black',
   
     display: 'flex',
-    color: 'white'
+    color: 'green'
   }
   return (
     <React.Fragment>
